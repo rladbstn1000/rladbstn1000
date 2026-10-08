@@ -15,15 +15,13 @@ Java · Spring Boot를 중심으로 **인증, 검색, 학습 데이터 API**를 
 
 > 데모는 로그인 없이 샘플 데이터로 둘러보는 체험판입니다.
 
-### MoneyToad · 돈꺼비 | 소비 분석·절약 서비스
+### [MoneyToad · 돈꺼비](https://github.com/rladbstn1000/MoneyToad-Portfolio) — 소비 분석·절약 서비스
 
-`SSAFY 팀 프로젝트 · 2025` `Backend` `후속 개인 개선 2026.09~10`
+[체험판](https://moneytoad-portfolio.pages.dev/) · [백엔드 사례](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/docs/portfolio/backend-cases.md) · [담당 범위와 원본 기여 기록](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/docs/portfolio/contribution-boundary.md)
 
-[**데모**](https://moneytoad-portfolio.pages.dev/) · [포트폴리오 저장소](https://github.com/rladbstn1000/MoneyToad-Portfolio) · [원본 팀 저장소](https://github.com/rladbstn1000/MoneyToad) · [기여 구분](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/docs/portfolio/contribution-boundary.md)
-
-- **문제:** 소비 내역과 예산을 비교해 지출 누수를 파악.
-- **구현:** JWT·Redis로 토큰 재발급과 로그아웃을 처리하고, 월별·카테고리별 SQL 집계와 AI 분석 결과를 소비 기준 API에 연결.
-- **후속 개선:** 예산·카드 객체의 소유권 검증, Redis 데모 세션의 토큰 회전과 재사용 시 폐기, 실제 MySQL·Redis·Chromium E2E 검증 환경 구성.
+- **원래 담당:** Spring Boot 인증·토큰 관리, 소비 내역·예산 API, 월별·카테고리별 SQL 집계, AI 분석 결과 연동.
+- **후속 개선:** 예산·카드 소유권 검사와 회귀 테스트, 서버 연동 데모의 Redis 원자적 토큰 회전·재사용 폐기, 기존 화면을 살린 정적 체험판 전환.
+- **체험 범위:** 공개 링크는 브라우저 메모리 기반 샘플입니다. 실제 백엔드 구현과 서버 연동 검증은 저장소에서 구분해 확인할 수 있습니다.
 
 ### ETCH | IT 취업 준비 통합 플랫폼
 
@@ -50,7 +48,7 @@ Java · Spring Boot를 중심으로 **인증, 검색, 학습 데이터 API**를 
 
 아래는 각 팀 프로젝트에서 직접 작성한 코드의 변경 기록입니다.
 
-- **MoneyToad:** [JWT·Redis 토큰 관리](https://github.com/rladbstn1000/MoneyToad/commit/cdf9d6f9dc9281f7d26bc4d6b72987e4a82c1b42) · [소비 내역·SQL 집계](https://github.com/rladbstn1000/MoneyToad/commit/42c0293ed70ef9149777be788105596c704ce9a3) · [AI 분석 결과 연동](https://github.com/rladbstn1000/MoneyToad/commit/625b8b6bf63dc29e8bc780749c7f2cd555d5349e)
+- **MoneyToad:** [예산 소유권 검사](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/be/src/main/java/com/potg/don/budget/service/BudgetService.java) · [demo 원자적 회전](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/be/src/main/resources/redis/demo-session-rotate.lua) · [월별·카테고리 집계](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/be/src/main/java/com/potg/don/transaction/repository/TransactionRepository.java) · [원래 역할과 후속 개선 구분](https://github.com/rladbstn1000/MoneyToad-Portfolio/blob/main/docs/portfolio/contribution-boundary.md)
 - **ETCH:** [통합검색 API](https://github.com/rladbstn1000/ETCH/commit/fdc85c110acef6ccaaeaa9dcc2775ba94ee48fb8) · [검색 페이지네이션](https://github.com/rladbstn1000/ETCH/commit/64a70777109c1af31ca2e9c601a7d9ce64b0168a) · [검색 인덱스 갱신 개선](https://github.com/rladbstn1000/ETCH/commit/43db667002518d71816d5db71b471efb80282dec)
 - **DO-DREAM:** [인증 API](https://github.com/rladbstn1000/DO-DREAM/commit/ef5f8ce1d6417c11938a68b786b17af2e9f92a5c) · [RAG 검색 결과 재정렬](https://github.com/rladbstn1000/DO-DREAM/commit/ccdc99bb21ff8637ad341913cb96c0aaec22ac0e) · [퀴즈 채점](https://github.com/rladbstn1000/DO-DREAM/commit/826c59d7c59e803023eee145f78bb767202f9704) · [최신 제출 기준 통계](https://github.com/rladbstn1000/DO-DREAM/commit/52c27c9e8a529cb5f31674eee307ca5da23577c9)
 
